@@ -27,6 +27,7 @@ module.exports = withPWA({
     },
   }),
   webpack5: true,
+  experimental: { appDir: true },
   webpack: (config, options) => {
     config.ignoreWarnings = [/Failed to parse source map/];
     const fallback = config.resolve.fallback || {};
@@ -45,6 +46,7 @@ module.exports = withPWA({
     Object.assign(experiments, {
       asyncWebAssembly: true,
       syncWebAssembly: true,
+      topLevelAwait: true
     });
     config.experiments = experiments;
     const alias = config.resolve.alias || {};
