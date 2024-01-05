@@ -27,7 +27,6 @@ module.exports = withPWA({
     },
   }),
   webpack5: true,
-  experimental: { appDir: true },
   webpack: (config, options) => {
     config.ignoreWarnings = [/Failed to parse source map/];
     const fallback = config.resolve.fallback || {};
